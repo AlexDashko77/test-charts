@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  line-height: 1;
+}
+
+.zoomValue {
+  min-width: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 8px;
+}
+
+/* Light theme */
+.wrapper.light .button {
+  background: white;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.wrapper.light .button:not(:disabled):hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.wrapper.light .button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.wrapper.light .zoomValue {
+  color: #111827;
+}
+
+.wrapper.dark .button {
+  background: #1f2937;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+.wrapper.dark .button:not(:disabled):hover {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.wrapper.dark .button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.wrapper.dark .zoomValue {
+  color: #f3f4f6;
+}
+
+@media (max-width: 680px) {
+  .button {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+  
+  .zoomValue {
+    font-size: 13px;
+    min-width: 36px;
+  }
+}
