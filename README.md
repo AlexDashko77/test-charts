@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Interactive Line Chart - A/B Test Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo
+[GitHub Pages Demo](https://alexdashko77.github.io)
 
-Currently, two official plugins are available:
+## Project Overview
+Interactive line chart for visualizing A/B test statistics, displaying conversion rates for different variations with theme support, filtering, and export functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Implemented Requirements
 
-## React Compiler
+### Core Features:
+- **Conversion Rate Line Chart** - displays CR = (conversions / visits) * 100
+- **Variations** - Original + 3 variations (A, B, C)
+- **Interactivity** - vertical line and tooltip on hover
+- **Auto-scaling axes** - X and Y adapt to visible data range
+- **Responsive design** - supports screens from 671px to 1300px
+- **Controls:**
+  - Variation selector (single or all)
+  - Period toggle (day/week)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Bonus Features:
+- **Zoom** - 3 zoom levels showing latest data
+- **Line styles** - Line, Smooth, Area
+- **Light/Dark theme** - respects system preferences
+- **Export to PNG** - save chart functionality
+- **Custom components** - themed dropdowns
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Main Stack:
+- **React 18** + **TypeScript** - typed components
+- **Recharts** - charting library
+- **CSS Modules** - component styling
+- **Bun** - package manager
+- **GitHub Actions** - auto-deploy to GitHub Pages
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Architecture:
+- **Component-based architecture** - reusable components
+- **Theme Context** - global theme management
+- **Custom hooks** - useTheme, useChartTheme
+- **TypeScript** - full type coverage
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# How to Run the Project
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Prerequisites
+
+### 1. Install Bun (Recommended)
+```bash
+# For macOS and Linux
+curl -fsSL https://bun.sh/install | bash
+
+# For Windows (via WSL)
+wsl
+curl -fsSL https://bun.sh/install | bash
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Clone the repository
+git clone https://github.com/alexdashko77/test-charts.git
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Navigate to project folder
+cd test-charts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install all dependencies
+```bash
+bun install
+```
+# Start development server
+```bash
+bun run dev
 ```
