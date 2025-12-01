@@ -1,4 +1,4 @@
-# Interactive Line Chart - A/B Test Visualization
+# Interactive Line Chart
 
 ## Live Demo
 [GitHub Pages Demo](https://alexdashko77.github.io)
